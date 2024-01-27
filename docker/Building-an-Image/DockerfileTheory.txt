@@ -1,0 +1,36 @@
+# This is indicating the base image,since we dont want everythingg from start(we can find base images from docker hub)
+
+# IF we are `running a django based image,we can find the base image related to django,which is python based image
+
+# the word after colon : specifies the version
+
+# alpine is the bare bone version(we can get other stuff like some version)
+
+FROM node:alpine  
+
+WORKDIR /usr/application
+
+# It will copy stuff from the current working folder into the image itself(node modules,package.json,package.lock and index.js into the working directory of container)
+# But the above approach copied everything,not a good practice though(Since if we have some file,it might be overwritten)
+# So instead of copying everything in the root directory,we copy stuff in the working directory,we copy it in /usr/app
+
+COPY . .
+
+# SInce we have node_modules installed thats why we can copy it to our container
+# What if we didnt had it,we put it in gitignore,then someone clones the repo and direcly runs the container then we need to install the node modules first
+
+RUN npm install
+
+
+# To run our application in local env,we give the same command,now we are telling the image to store this command,so whenever the image spins up the container,it will run this command
+CMD ["npm","run","start"]
+
+
+# Caching happens at varorious layers,if we delete the image then again create it,it is created instantly
+
+# If we change anything,then again npm install step happens which is a very big step
+
+# So we need to cache stuff at this level as much as we can
+
+
+

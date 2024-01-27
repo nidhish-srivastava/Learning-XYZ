@@ -1,0 +1,175 @@
+$primary-font-size: 1.1rem;
+
+.text {
+  color: blue;
+  font-size: $primary-font-size;
+}
+.text2 {
+  color: green;
+  font-size: $primary-font-size;
+}
+.text3 {
+  color: yellow;
+  font-size: $primary-font-size;
+}
+.text4 {
+  color: orange;
+  font-size: $primary-font-size;
+}
+.text5 {
+  color: red;
+  font-size: $primary-font-size;
+}
+
+@mixin button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  &:hover {
+    background-color: darken($color: #3498db, $amount: 10%);
+  }
+}
+
+.button {
+  @include button;
+}
+
+@mixin button($bg-color) {
+  // @mixin button($bg-color : #3498db){ Setting default(so that if we foreget to pass color,then it will take default color)
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $bg-color;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  &:hover {
+    background-color: darken($color: $bg-color, $amount: 10%);
+  }
+}
+
+.primary-btn {
+  @include button(#3498db);
+}
+
+.secondary-btn {
+  @include button(#e74c3c);
+}
+
+// Nesting
+.container {
+  width: 100%;
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+
+    .header {
+      font-size: 24px;
+    }
+
+    .content {
+      font-size: 18px;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+
+  li {
+    padding: 5px;
+    &:hover {
+      background-color: lightblue;
+    }
+    // &:nth-child(even) {
+    //   background-color: #e74c3c;
+    // }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #3498db;
+
+  &.large {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  &.secondary {
+    background-color: #e74c3c;
+  }
+}
+
+
+%shared-styles{
+  font-weight: 600;
+  color: #333;
+  padding : 2rem;
+}
+
+.div{
+  @extend %shared-styles;
+  background-color: lightgreen;
+}
+
+.section{
+  @extend %shared-styles;
+  background-color: lightblue;
+}
+
+
+
+
+// ONe more complex Inheritance example
+
+%menu-item{
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #3498db;
+  }
+}
+
+%ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar{
+  .ul{
+   @extend %ul;
+    li{
+      display: inline-block;
+      margin-right: 10px;
+      a{
+        @extend %menu-item;
+      }
+    }
+  }
+}
+
+.footer-menu{
+  ul{
+    @extend ul;
+    li{
+      display: block;
+      a{
+        @extend %menu-item;
+      }
+    }
+  }
+}

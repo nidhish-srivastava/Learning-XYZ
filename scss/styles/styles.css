@@ -1,0 +1,141 @@
+.text {
+  color: blue;
+  font-size: 1.1rem;
+}
+
+.text2 {
+  color: green;
+  font-size: 1.1rem;
+}
+
+.text3 {
+  color: yellow;
+  font-size: 1.1rem;
+}
+
+.text4 {
+  color: orange;
+  font-size: 1.1rem;
+}
+
+.text5 {
+  color: red;
+  font-size: 1.1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+.button:hover {
+  background-color: #217dbb;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+.primary-btn:hover {
+  background-color: #217dbb;
+}
+
+.secondary-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+.secondary-btn:hover {
+  background-color: #d62c1a;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .container .header {
+    font-size: 24px;
+  }
+  .container .content {
+    font-size: 18px;
+  }
+}
+
+ul, .footer-menu ul {
+  list-style: none;
+}
+ul li, .footer-menu ul li {
+  padding: 5px;
+}
+ul li:hover {
+  background-color: lightblue;
+}
+ul li a, .footer-menu ul li a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #3498db;
+}
+.button.large {
+  padding: 15px 30px;
+  font-size: 18px;
+}
+.button.secondary {
+  background-color: #e74c3c;
+}
+
+.section, .div {
+  font-weight: 600;
+  color: #333;
+  padding: 2rem;
+}
+
+.div {
+  background-color: lightgreen;
+}
+
+.section {
+  background-color: lightblue;
+}
+
+.footer-menu ul li a, .nav-bar .ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+.footer-menu ul li a:hover, .nav-bar .ul li a:hover {
+  color: #3498db;
+}
+
+.nav-bar .ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar .ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.footer-menu ul li {
+  display: block;
+}/*# sourceMappingURL=styles.css.map */
