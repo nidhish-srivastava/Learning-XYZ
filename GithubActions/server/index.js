@@ -15,6 +15,6 @@ app.use("/user", userRouter)
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect("mongodb+srv://Nidhish:123321@nodeexpressprojects.8ls67qd.mongodb.net/AWSDeploy?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGO);
 
 app.listen(3000, () => console.log('Server running on port 3000'));
